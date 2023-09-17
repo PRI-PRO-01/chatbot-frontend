@@ -10,6 +10,12 @@ const links = [{
   label: 'Home',
   route: '/'
 }, {
+  label: 'Marcas',
+  route: '#'
+},{
+  label: 'Planes',
+  route: '#'
+}, {
   label: 'Login',
   route: '/login'
 }, {

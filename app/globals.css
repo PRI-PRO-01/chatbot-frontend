@@ -84,3 +84,31 @@ main {
   margin: 0 auto;
   z-index: 2;
 }
+
+.homePage{
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  font-size: 50pt;
+  font-weight: bolder;
+}
+
+.homePage span{
+  background-image: linear-gradient(to right, #6875f5, #c248b9);
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.homePage .img{
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.homePage p{
+  font-size: 15pt;
+  font-weight: normal;
+  width: 50%;
+  margin: auto;
+}
