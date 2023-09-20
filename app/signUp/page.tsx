@@ -1,10 +1,23 @@
 "use client"
 import { useState } from 'react';
+import React from 'react';
 import styles from './style.module.css'
 import Image from 'next/image'
 
+type FormData = {
+    companyName?: string; // Usa '?' para hacer la propiedad opcional
+    companySector?: string;
+    companyHistory?: string;
+    companyInfo?: string;
+    frequentQA?: string;
+    productServiceInfo?: string;
+    feeling?: string;
+    // Agrega otras propiedades aquí
+};
+
 const MultiStep = () => {
     const [step, setStep] = useState(1);
+    const [formData, setFormData] = useState<FormData>({});
 
     const nextStep = () => {
         setStep(step + 1);
@@ -13,6 +26,11 @@ const MultiStep = () => {
     const prevStep = () => {
         setStep(step - 1);
     };
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
+      };
 
     const renderStep = () => {
         switch (step) {
@@ -29,9 +47,9 @@ const MultiStep = () => {
                             </div>
 
                             <label htmlFor=""><b>¿Cuál es el nombre de tu empresa?</b></label> <br />
-                            <input type="text" className={`${styles.input}`} placeholder='Llajuita Snacks' /><br />
+                            <input type="text" className={`${styles.input}`} name='companyName' value={formData.companyName || ''} onChange={handleInputChange} placeholder='Llajuita Snacks' /><br />
                             <label htmlFor=""><b>¿A qué rubro pertenece tu empresa?</b></label> <br />
-                            <input type="text" className={`${styles.input}`} placeholder='Gastronomía' /> <br />
+                            <input type="text" className={`${styles.input}`} name='companySector' value={formData.companySector || ''} onChange={handleInputChange} placeholder='Gastronomía' /> <br />
 
                             <button onClick={nextStep} className={`${styles.next}`}>Siguiente</button>
                         </div>
@@ -88,7 +106,7 @@ const MultiStep = () => {
                                 </p>
                             </div>
 
-                            {/* <button onClick={prevStep} className={`${styles.next}`}>Anterior</button>*/}
+                            <button onClick={prevStep} className={`${styles.next}`}>Anterior</button>
                             <button onClick={nextStep} className={`${styles.next}`}>Siguiente</button>
                         </div>
                     </>
