@@ -30,22 +30,22 @@
     margin-top: 5px;
 }
 
-.line1{
+.line1 {
     width: 27%;
 }
 
-.line2{
+.line2 {
     width: 50%;
 }
 
-.line3{
+.line3 {
     width: 100%;
 }
 
 .body {
     border: #fff 1px solid;
     border-radius: 15px;
-    /*background-color: #808080;*/
+    background-color: rgba(24, 26, 32, 0.8);
     color: #000;
     margin-top: 30px;
     margin-left: 55px;

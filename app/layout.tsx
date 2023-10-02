@@ -6,20 +6,28 @@ import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const links = [{
-  label: 'Home',
-  route: '/'
-}, {
-  label: 'Marcas',
-  route: '#'
-},{
-  label: 'Planes',
+const linksC = [{
+  label: 'Getting Started',
   route: '#'
 }, {
+  label: 'Casos de Uso',
+  route: '#'
+}, {
+  label: 'Docs',
+  route: '#'
+}, {
+  label: 'Precios',
+  route: '#'
+}, {
+  label: 'Blog',
+  route: '#'
+}]
+
+const linksR = [{
   label: 'Login',
   route: '/login'
 }, {
-  label: 'Crear Cuenta',
+  label: 'Registrarse',
   route: '/signUp'
 }]
 
@@ -39,14 +47,28 @@ export default function RootLayout({
         <header>
           <nav>
             <ul className='navBarList'>
-              <a href="/">
-                <Image src={"/img/ada_logo.png"} alt='ADA' width={150} height={50} className='logo' />
-              </a>
-              {links.map(({ label, route }) => (
-                <li key={route}>
-                  <Link href={route}>{label}</Link>
-                </li>
-              ))}
+              <div className='navL'>
+                <a href="/">
+                  <Image src={"/img/ada_logoMini.png"} alt='ADA' width={50} height={50} className='logo' />
+                </a>
+                ADA
+              </div>
+
+              <div className='navC'>
+                {linksC.map(({ label, route }) => (
+                  <li key={route}>
+                    <Link href={route}>{label}</Link>
+                  </li>
+                ))}
+              </div>
+
+              <div className='navR'>
+                {linksR.map(({ label, route }) => (
+                  <li key={route}>
+                    <Link href={route}>{label}</Link>
+                  </li>
+                ))}
+              </div>
             </ul>
           </nav>
         </header>

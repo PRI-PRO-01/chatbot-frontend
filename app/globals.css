@@ -26,9 +26,8 @@
 
 
 header {
-  background-color: black;
-  border: 1px solid #f0f0f0;
-  border-radius: 4px;
+  background-color: #0a0813;
+  border-radius: 5px;
   color: #f0f0f0;
   padding: 10px;
   position: fixed;
@@ -41,14 +40,38 @@ header {
   display: flex;
   list-style: none;
   gap: 32px;
+  justify-content: space-between;
 }
 
-.navBarList li {
-  margin-top: 17px;
+.navC li {
+  padding: 12px 20px 5px 20px;
+  border: 1px solid #431659;
+  border-radius: 15px;
 }
 
 .logo {
-  border-radius: 10px;
+  border-radius: 25px;
+}
+
+.navL {
+  display: flex;
+  gap: 20px;
+  font-weight: bolder;
+  font-size: 25pt;
+}
+
+.navC {
+  display: flex;
+  gap: 32px;
+}
+
+.navR {
+  display: flex;
+  gap: 30px;
+  margin-top: 13px;
+  font-weight: bolder;
+  font-size: 15pt;
+  text-transform: uppercase;
 }
 
 .navBarList a:hover {
@@ -85,7 +108,7 @@ main {
   z-index: 2;
 }
 
-.homePage{
+.homePage {
   margin: 0 auto;
   text-align: center;
   align-items: center;
@@ -93,7 +116,7 @@ main {
   font-weight: bolder;
 }
 
-.homePage span{
+.homePage span {
   background-image: linear-gradient(to right, #6875f5, #c248b9);
   background-clip: text;
   color: transparent;
@@ -101,12 +124,12 @@ main {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.homePage .img{
+.homePage .img {
   margin: 0 auto;
   border-radius: 20px;
 }
 
-.homePage p{
+.homePage p {
   font-size: 15pt;
   font-weight: normal;
   width: 50%;

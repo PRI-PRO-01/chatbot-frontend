@@ -3,6 +3,7 @@ import { useState } from 'react';
 import React from 'react';
 import styles from './style.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type FormData = {
     companyName?: string; // Usa '?' para hacer la propiedad opcional
@@ -30,7 +31,7 @@ const MultiStep = () => {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
-      };
+    };
 
     const renderStep = () => {
         switch (step) {
@@ -123,7 +124,7 @@ const MultiStep = () => {
                                 Pregunta cualquier cosa en base a la información cargada en tu negocio
                             </div>
                             <input type="text" className={`${styles.input}`} placeholder='Envía un mensaje' /><br />
-                            <button className={`${styles.next}`}>Ir a mi Dashboard</button>
+                            <Link className={`${styles.next}`} href='/dashboard'>Ir a mi Dashboard</Link>
                         </div>
                     </>
                 );

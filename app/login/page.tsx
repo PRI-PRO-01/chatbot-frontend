@@ -14,6 +14,7 @@ export default function loginPage(){
                     <input type="password" className={`${styles.input}`} placeholder='Contraseña' /><br />
                     <input type="submit" className={`${styles.submit}`} value='Iniciar Sesión'/>
                 </form>
+                <br /><hr />
                 <div className={`${styles.thirdServices}`}>
                     <a href="#" className={`${styles.login3rd}`}>Iniciar Sesión con Google</a>
                     <a href="#" className={`${styles.login3rd}`}>Iniciar Sesión con Facebook</a>
