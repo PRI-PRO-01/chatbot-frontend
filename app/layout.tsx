@@ -1,6 +1,8 @@
+'use client'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -72,13 +74,19 @@ export default function RootLayout({
             </ul>
           </nav>
         </header>
+        <ProgressBar
+          height="4px"
+          color="#777ff3"
+          options={{ showSpinner: false }}
+          shallowRouting
+        />
         <div className='background'>
           <div className='img'>
             <img src="/img/black-background.jpg" alt="" />
           </div>
           <div className='img_overlay'></div>
         </div>
-        <main>
+        <main className='container'>
           {children}
         </main>
       </body>
