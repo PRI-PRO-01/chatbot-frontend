@@ -1,0 +1,30 @@
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ajusta el valor según sea necesario */
+}
+
+.modal {
+    background-color: #808080;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px 20px 20px;
+    max-width: 80%;
+    z-index: 1001;
+}
+
+.modal_header {
+    display: flex;
+    justify-content: end;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 20pt;
+}

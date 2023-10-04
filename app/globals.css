@@ -20,12 +20,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/*
 * {
-  /*
   border: 1px solid red ;
-  */
-  color: #f0f0f0;
 }
+*/
 
 header {
   background-color: #0a0813;
@@ -56,10 +55,13 @@ header {
 }
 
 .navL {
-  display: flex;
-  gap: 20px;
   font-weight: bolder;
   font-size: 25pt;
+}
+
+.navL a {
+  display: flex;
+  gap: 10px;
 }
 
 .navC {
@@ -136,4 +138,5 @@ main {
   font-weight: normal;
   width: 50%;
   margin: auto;
+  color: #fff;
 }

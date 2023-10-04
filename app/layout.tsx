@@ -52,8 +52,8 @@ export default function RootLayout({
               <div className='navL'>
                 <a href="/">
                   <Image src={"/img/ada_logoMini.png"} alt='ADA' width={50} height={50} className='logo' />
+                  ADA
                 </a>
-                ADA
               </div>
 
               <div className='navC'>
