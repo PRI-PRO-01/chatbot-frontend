@@ -1,5 +1,9 @@
 .container{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+  padding-top: 100px;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .img{

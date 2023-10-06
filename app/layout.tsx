@@ -86,9 +86,9 @@ export default function RootLayout({
           </div>
           <div className='img_overlay'></div>
         </div>
-        <main className='container'>
-          {children}
-        </main>
+        {/* <main className='container'>
+        </main> */}
+        {children}
       </body>
     </html>
   )

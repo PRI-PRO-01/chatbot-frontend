@@ -3,6 +3,10 @@
     width: 900px;
     margin: auto;
     color: #fff;
+
+    padding-top: 100px;
+    margin: 0 auto;
+    z-index: 2;
 }
 
 .tabs {

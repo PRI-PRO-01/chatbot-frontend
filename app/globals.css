@@ -106,7 +106,7 @@ header {
   opacity: 0.7;
 }
 
-main {
+.container {
   padding-top: 100px;
   margin: 0 auto;
   z-index: 2;
@@ -118,6 +118,10 @@ main {
   align-items: center;
   font-size: 50pt;
   font-weight: bolder;
+
+  padding-top: 100px;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .homePage span {

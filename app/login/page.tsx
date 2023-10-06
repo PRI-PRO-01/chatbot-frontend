@@ -1,5 +1,6 @@
 import styles from './style.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 export default function loginPage() {
     return (
         <div className={`${styles.container}`}>
@@ -12,7 +13,7 @@ export default function loginPage() {
                 <form action="get">
                     <input type="text" className={`${styles.input}`} placeholder='Correo Eletrónico' /><br />
                     <input type="password" className={`${styles.input}`} placeholder='Contraseña' /><br />
-                    <input type="submit" className={`${styles.submit}`} value='Iniciar Sesión' />
+                    <Link href='/dashboard'><input type="submit" className={`${styles.submit}`} value='Iniciar Sesión' /></Link>
                 </form>
                 <br /><hr />
                 <div className={`${styles.thirdServices}`}>

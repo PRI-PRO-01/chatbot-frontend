@@ -1,0 +1,33 @@
+.newProjectButton {
+    padding: 10px;
+    background-color: #8610e2;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.project {
+    background-color: #2b1388;
+    border: 1px solid #110a52;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    font-size: 15pt;
+    width: 300px;
+    height: 150px;
+    padding-left: 20px;
+}
+
+.project p {
+    width: 95%;
+    margin-top: 20px;
+}
+
+.project span {
+    width: 5%;
+    height: 35px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15pt;
+    margin-top: 7px;
+    margin-right: 7px;
+}
