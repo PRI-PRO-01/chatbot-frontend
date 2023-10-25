@@ -1,24 +1,47 @@
 'use client'
 import React, { FormEvent } from 'react';
+import { useState } from 'react';
+
+interface Message {
+    sender: 'user' | 'bot';
+    content: string;
+}
 
 export default function Chat() {
-    const handleSubmit = (e: FormEvent) => {
+    const [messages, setMessages] = useState<Message[]>([]);
+
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Aquí puedes agregar la lógica para enviar el mensaje
+        const userMessage = (e.target as HTMLFormElement).content.value;
+        // Simular una respuesta del bot después de un breve retraso
+        addMessage('user', userMessage);
+        setTimeout(() => {
+            const botMessage = 'Lorem ipsum dolor sit amet consectetur adipisicing elit Unde, est Ullam cumque, dignissimos animi necessitatibus totam tempore illo ea libero';
+            addMessage('bot', botMessage);
+        }, 1000);
+        (e.target as HTMLFormElement).content.value = '';
+    };
+
+    const addMessage = (sender: 'user' | 'bot', content: string) => {
+        setMessages((prevMessages) => [
+            ...prevMessages,
+            { sender, content },
+        ]);
     };
 
     return (
-        <div className=" w-full h-3/4 relative flex flex-col overflow-y-auto bg-black/20 mt-5 rounded-3xl">
+        <div className="w-full h-3/4 relative flex flex-col overflow-y-auto bg-black/20 mt-5 rounded-3xl">
             <div className="flex-grow pt-10 px-20">
-                {/*estilos mensajes del user */}
-                <div className="text-right w-3/4 bg-blue-600 rounded-b-3xl rounded-tl-3xl py-3 pl-3 pr-10 my-1 ml-auto">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero error, dolore ab maxime voluptates est deserunt saepe excepturi sed nostrum.
-                </div>
-
-                {/*estilos mensajes del bot */}
-                <div className="text-left w-3/4 bg-indigo-600 rounded-b-3xl rounded-tr-3xl py-3 pl-10 pr-3 my-1">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, est. Ullam cumque, dignissimos animi necessitatibus totam tempore illo ea libero.
-                </div>
+                {messages.map((message, index) => (
+                    <div key={index}
+                        className={`w-fit max-w-xl rounded-b-3xl py-3 my-3
+                            ${message.sender === 'user' ?
+                                'text-right bg-blue-600 rounded-tl-3xl pl-3 pr-7 ml-auto'
+                                : 'text-left bg-indigo-600 rounded-tr-3xl pl-7 pr-3'}`
+                        }>
+                        {message.content}
+                    </div>
+                ))}
             </div>
             <div className="sticky bottom-0 left-0 right-0 px-5 pt-7 pb-3 bg-gradient-to-t from-gray-800 via-gray-700 to-transparent">
                 <form onSubmit={handleSubmit}>
