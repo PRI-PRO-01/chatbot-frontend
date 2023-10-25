@@ -8,23 +8,20 @@ const linksMenu = [{
     label: 'Workshop',
     route: '/dashboard/workshop'
 }, {
+    label: 'Chat Conversation',
+    route: '/dashboard/conversations'
+}, {
     label: 'Manage Data Sources',
     route: '/dashboard/dataSources'
 }, {
     label: 'Teach Model',
     route: '/dashboard/teachModel'
 }, {
-    label: 'Conversations',
-    route: '/dashboard/conversations'
-}, {
     label: 'Evaluations',
     route: '/dashboard/evaluations'
 }, {
     label: 'Usage',
     route: '/dashboard/usage'
-}, {
-    label: 'API Keys',
-    route: '/dashboard/apiKeys'
 }, {
     label: 'Project Settings',
     route: '/dashboard/projectSettings'

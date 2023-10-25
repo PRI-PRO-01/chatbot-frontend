@@ -1,14 +1,13 @@
 import React, { ReactElement } from 'react';
 import SideBarLayout from '../../components/sideBarLayout';
-// import styles from './style.module.css'
-import Image from 'next/image'
-import Link from 'next/link'
+import Chat from '@/app/components/chat';
 
 export default function conversationsPage() {
     return (
         <>
             <SideBarLayout>
-                <h1 className='text-5xl font-bold'>CONVERSATIONS</h1>
+                <h1 className='text-5xl font-bold'>CHAT CONVERSATION</h1>
+                <Chat/>
             </SideBarLayout>
         </>
     )
