@@ -10,15 +10,37 @@ interface Message {
 export default function Chat() {
     const [messages, setMessages] = useState<Message[]>([]);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        //const userMessage = (e.target as HTMLFormElement).content.value;
         const userMessage = (e.target as HTMLFormElement).content.value;
-        // Simular una respuesta del bot después de un breve retraso
         addMessage('user', userMessage);
-        setTimeout(() => {
-            const botMessage = 'Lorem ipsum dolor sit amet consectetur adipisicing elit Unde, est Ullam cumque, dignissimos animi necessitatibus totam tempore illo ea libero';
-            addMessage('bot', botMessage);
-        }, 1000);
+        const userMessageEncoded = encodeURIComponent(userMessage);
+
+        //const url = `http://localhost:8000/chat/trained?message=${encodeURIComponent(userMessageEncoded)}`;
+        const url = `http://localhost:8000/chat/trained?message=${userMessageEncoded}`;
+    
+        try{
+            // Send a POST request to the backend
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        
+            if (!response.ok) {
+                console.error('Failed to send message to backend');
+                return;
+            }
+        
+            const botMessage = await response.text();
+            const botMessageWithoutQuotes = botMessage.replace(/"/g, '');
+            addMessage('bot', botMessageWithoutQuotes);
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
         (e.target as HTMLFormElement).content.value = '';
     };
 
