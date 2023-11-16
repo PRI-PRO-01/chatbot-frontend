@@ -23,7 +23,7 @@
 
 .modal_header {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     color: #fff;
     font-weight: bolder;
     font-size: 20pt;

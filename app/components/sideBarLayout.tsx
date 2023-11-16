@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const linksMenu = [{
-    label: 'Workshop',
-    route: '/dashboard/workshop'
+    label: 'Dashboard',
+    route: '/dashboard'
 }, {
     label: 'Chat Conversation',
     route: '/dashboard/conversations'
@@ -47,7 +47,7 @@ const linksNav = [{
     route: '#'
 }]
 
-export default function sideBarLayout({ children, }: { children: React.ReactNode }) {
+export default function sideBarLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
             <body>
@@ -66,7 +66,7 @@ export default function sideBarLayout({ children, }: { children: React.ReactNode
                 <div className='bodyPage'>
                     <aside className='sideBarMenu'>
                         <ul className='dashHeader'>
-                            <a href="/dashboard">
+                            <a href="./">
                                 <Image src={"/img/ada_logoMini.png"} alt='ADA' width={70} height={70} className='rounded-xl' />
                             </a>
                         </ul>
