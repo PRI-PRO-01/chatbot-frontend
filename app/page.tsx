@@ -15,8 +15,37 @@ export default function Home() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const userInformation = (e.target as HTMLFormElement).info.value;
+    const trainingInformation = (e.target as HTMLFormElement).info.value;
+    const TrainingInfoEncoded = encodeURIComponent(trainingInformation);
+ 
+    const url = `http://localhost:8000/datasource/?dataContent=${TrainingInfoEncoded}`;
     //Enviar al BackEnd
+    if(trainingInformation.trim()){
+      try{
+        // Send a POST request to the backend
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+   
+        if (!response.ok) {
+            console.error('Failed to send message to backend');
+            return;
+        }
+   
+        const responseData = await response.json();
+        console.log(responseData);
+   
+        // Redirect to the desired page
+        //router.push('/components/chat');
+      }
+      catch (error) {
+          console.error('Error:', error);
+      }
+    }
+    (e.target as HTMLFormElement).info.value = '';
   };
 
   return (
