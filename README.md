@@ -3,10 +3,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Project Video:
 https://www.youtube.com/watch?v=VEQS1B1m3Pc&ab_channel=DarioOrtega
 
-## Getting Started
-Previo a la instalacion se debera clonar y correr el proyecto backend para el correcto funcionamiento del frontend
+Manual Tecnico para la inicializacion del proyecto (Requiere descarga): https://github.com/PRI-PRO-01/chatbot-frontend/blob/main/Manual%20Tecnico%20ADA%20AI.doc
 
-First, run the development server:
+## Getting Started
+Previo a la instalacion se debera clonar y correr el proyecto backend para el correcto funcionamiento del frontend: https://github.com/GET-ADA-AI/ada-chatbot-builder-backend
+
+First install all the dependencies:
+npm install
+
+Then, run the development server:
 
 ```bash
 npm run dev
