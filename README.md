@@ -4,6 +4,7 @@ Project Video:
 https://www.youtube.com/watch?v=VEQS1B1m3Pc&ab_channel=DarioOrtega
 
 ## Getting Started
+Previo a la instalacion se debera clonar y correr el proyecto backend para el correcto funcionamiento del frontend
 
 First, run the development server:
 
